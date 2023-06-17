@@ -1,0 +1,21 @@
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+    height: 10rem;
+    background-color: #474394;
+}
+.wrapper {
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
