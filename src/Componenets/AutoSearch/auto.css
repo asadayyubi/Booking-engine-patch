@@ -1,0 +1,21 @@
+.MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"]
+  .MuiAutocomplete-input {
+  border: none;
+}
+
+.auto-complete-input {
+  width: 18rem;
+  margin: 5px;
+  padding: 2px;
+}
+
+@media (max-width: 650px) {
+
+  .auto-complete-input {
+    width: auto;
+    margin: 20px 6px;
+    padding: 0px;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+}

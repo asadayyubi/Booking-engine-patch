@@ -4,3 +4,27 @@
 /* .hero-btn:hover {
     background-color: aqua;
 } */
+
+.hero-btn{
+    padding: 21px 46px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    background: var(--button-color);
+    border-radius: 0 5px 5px 0;
+    
+
+}
+
+@media (max-width: 650px) {
+    .hero-btn{
+        padding: 12px 0px;
+        border: none;
+        font-size: 16px;
+        color: #fff;
+      
+        width: 97%;
+    margin: auto;
+    border-radius: 4px;
+    }
+}

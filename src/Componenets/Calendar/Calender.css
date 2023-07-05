@@ -7,7 +7,13 @@
 .calendarWrap {
     /* display: inline-block; */
     position: relative;
+    /* border: 1px solid red; */
+    padding: 9px;
+    padding-right: 18px;
+    border-right: 2px solid rgb(233, 227, 227);
   }
+
+  
   
   .calendarElement {
     position: absolute;
@@ -16,4 +22,36 @@
     top: 3rem;
     border: 1px solid #ccc;
     z-index: 999;
+  }
+
+  .rdrDefinedRangesWrapper{
+    display: none;
+  }
+
+  @media (max-width:650px) {
+    .calendarWrap {
+      border:none;
+        border: none;
+        color: white;
+        font-weight: 600;
+        letter-spacing: 1px;
+
+    }
+
+    .calendarElement{
+      border: none;
+      top: 3.5rem;
+    }
+
+    .rdrCalendarWrapper {
+      color: #000000;
+      font-size: 12px;
+      width: 80%;
+      margin: auto;
+      height: 70vh;
+  }
+
+  
+    
+
   }

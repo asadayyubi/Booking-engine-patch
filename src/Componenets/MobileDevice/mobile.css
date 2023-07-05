@@ -1,0 +1,39 @@
+.mobile-patch-main {
+  /* width: 400px; */
+  height: 100vh;
+  background: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  /* top: 20%; */
+  transition: 1s ease-out;
+}
+
+.mobile-patch-main .close-icon {
+  display: flex;
+  justify-content: end;
+  margin: 10px;
+}
+
+.mobile-button-main-comp {
+  width: 100%;
+  position: absolute;
+  top: 93.3vh;
+  /* border: 1px solid red; */
+  background: var(--button-color);
+}
+.mobile-button-main-comp button {
+  background: var(--button-color);
+  /* padding: 8px 80px; */
+  border: none;
+  padding: 8px 0 8px 0;
+  color: #fff;
+  font-size: 18px;
+}
+.transition-top {
+  transform: translateY(100%);
+}
+.transition-active {
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(0);
+}
