@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getHotel } from "../../Redux/Hotel/action";
 import { SET_SELECTED_HOTEL_DATA } from "../../Redux/UserData/actionTypes";
 import { updateHotelSelected, updateSelection } from "../../Redux/UserData/action";
+import "./auto.css"
 
 console.log(hotelFiltered);
 
@@ -31,8 +32,8 @@ const AutoSearch = ({ handleUserInput }) => {
   };
 
   return (
-    <Autocomplete
-      style={{ width: "18rem", margin: "5px", padding: "2px" }}
+    <Autocomplete className="auto-complete-input"
+      
       id="free-solo-demo"
       freeSolo
       options={hotels}

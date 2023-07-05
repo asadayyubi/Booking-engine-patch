@@ -24,7 +24,7 @@ const Input = ({text}) => {
     <div className="main-input-container">
       <p>{text}</p>
       <select
-        id="dropdown"
+        id="dropdown"className="mobile-select"
         value={selectedValue}
         onChange={(e) => handleChange(e,text)}
       >

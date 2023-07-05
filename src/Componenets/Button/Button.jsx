@@ -46,7 +46,7 @@ const Button = () => {
     <div>
       <button
         className="hero-btn"
-        style={{ padding: "10px 20px" }}
+        // style={{ padding: "10px 20px" }}
         onClick={handleButtonClick}
       >
         Book Now
