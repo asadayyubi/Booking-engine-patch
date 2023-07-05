@@ -1,18 +1,40 @@
 import React, { useEffect, useState } from "react";
 import "./Button.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { constructObjForGetHotelById } from "../../Redux/UserData/action";
 
 const Button = () => {
   const [data, setData] = useState({});
-  
-  const store = useSelector(
-    (store) => store.reducerUserData
-  );
 
-
+  const store = useSelector((store) => store?.reducerUserData || {});
+  const dispatch = useDispatch();
+  console.log(store, "from all data");
+  const {
+    from_date,
+    to_date,
+    no_of_adults,
+    room_count,
+    no_of_children,
+    selected_hotel,
+    parmas_for_api,
+  } = store;
+  useEffect(() => {
+    dispatch(
+      constructObjForGetHotelById({
+        from_date,
+        to_date,
+        no_of_adults,
+        room_count,
+        no_of_children,
+        id: selected_hotel.hotel_id,
+      })
+    );
+  }, [selected_hotel]);
   const handleButtonClick = () => {
     // Construct the URL with the data as query parameters
+
     console.log(store, "from all data");
+  
     const url = `https://be.ratebotai.com/?data=${encodeURIComponent(
       JSON.stringify(store)
     )}`;

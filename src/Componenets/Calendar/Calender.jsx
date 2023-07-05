@@ -1,17 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-// import { DateRange } from "react-date-range";
-// import format from "date-fns/format";
 import { format } from "date-fns";
-// import { addDays, startOfDay } from "date-fns";
-// import "react-date-range/dist/styles.css";
-// import "react-date-range/dist/theme/default.css";
 import { DateRangePicker as DateRange } from "react-date-range";
-import "react-date-range/dist/styles.css"; // main css file
-import "react-date-range/dist/theme/default.css"; // theme css file
+import "react-date-range/dist/styles.css";
+import "react-date-range/dist/theme/default.css";
 import "./Calender.css";
 import { updateCalender } from "../../Redux/UserData/action";
 import { useDispatch, useSelector } from "react-redux";
-
 
 const Calendar = () => {
   // date state
@@ -24,16 +18,21 @@ const Calendar = () => {
   // open close
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
-  const store = useSelector((store) => store.reducerUserData)
-
+  const store = useSelector((store) => store.reducerUserData);
 
   // get the target element to toggle
   const refOne = useRef(null);
- useEffect(() => {
-  console.log(range,"from effect");
-  dispatch(updateCalender(range))
-  console.log(store);
- },[range])
+
+  useEffect(() => { 
+    
+    const formattedStartDate = format(range.startDate, "yyyy-MM-dd");
+    const formattedEndDate = format(range.endDate, "yyyy-MM-dd");
+    console.log(formattedStartDate, formattedEndDate);
+    console.log(range, "from effect");
+    dispatch(updateCalender([formattedStartDate,formattedEndDate]));
+    console.log(store);
+  }, [range]);
+
   useEffect(() => {
     // event listeners
     document.addEventListener("keydown", hideOnEscape, true);
@@ -58,10 +57,13 @@ const Calendar = () => {
       setOpen(false);
     }
   };
-  const handleChange = (date) => {
 
-    setRange(date.selection);
-    
+  const handleChange = (date) => {
+    setRange({
+      startDate: date.selection.startDate,
+      endDate: date.selection.endDate,
+      key: "selection",
+    });
   };
 
   return (
@@ -92,16 +94,6 @@ const Calendar = () => {
           />
         )}
       </div>
-
-      {/* <DateRange
-            onChange={(item) => handleChange(item)}
-            editableDateInputs={true}
-            moveRangeOnFirstSelection={false}
-            ranges={range}
-            months={1}
-            direction="horizontal"
-            className="calendarElement"
-          /> */}
     </div>
   );
 };

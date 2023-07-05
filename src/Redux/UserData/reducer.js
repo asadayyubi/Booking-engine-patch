@@ -1,4 +1,5 @@
 import {
+  DATA_FOR_GET_HOTEL_BY_ID,
   SET_ADULTS,
   SET_CALENDER_RANGE,
   SET_CHILDREN,
@@ -7,36 +8,38 @@ import {
 } from "./actionTypes";
 
 const initialState = {
-  from_to: {},
-  adults: 0,
-  rooms: 0,
-  children: 0,
-  selected_hotel: {},
+  from_date: "",
+  to_date: "",
+  no_of_adults: 0,
+  room_count: 0,
+  no_of_children: 0,
+  selected_hotel: {}, 
+  parmas_for_api: {},
 };
 
 export const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case SET_CALENDER_RANGE:
-        console.log("comming from calendar",payload);
       return {
         ...state,
-        from_to:payload,
+        from_date: payload[0],
+        to_date: payload[1],
       };
     case SET_ADULTS:
       return {
         ...state,
-        adults: payload,
+        no_of_adults: payload,
       };
 
     case SET_ROOMS:
       return {
         ...state,
-        rooms: payload,
+        room_count: payload,
       };
     case SET_CHILDREN:
       return {
         ...state,
-        children: payload,
+        no_of_children: payload,
       };
 
     case SET_SELECTED_HOTEL_DATA:
@@ -44,8 +47,13 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         selected_hotel: payload,
       };
+    case DATA_FOR_GET_HOTEL_BY_ID:
+      return {
+        ...state,
+        parmas_for_api: payload,
+      };
 
     default:
-      return state
+      return state;
   }
 };

@@ -8,11 +8,11 @@ import {
 const BASE_URL = "https://api.ratebotai.com:8443";
 
 // Main Url for Production
-// const API_GET_HOTEL_SNIPIT_DATA = BASE_URL + "/get_hotel_snipit_data"
+const API_GET_HOTEL_SNIPIT_DATA = BASE_URL + "/get_hotel_snipit_data"
 // ---------------------------------------
 
 // URL for testing
-const API_GET_HOTEL_SNIPIT_DATA = "http://127.0.0.1:5000/get_hotel_snipit_data";
+// const API_GET_HOTEL_SNIPIT_DATA = "http://127.0.0.1:5000/get_hotel_snipit_data";
 
 // the below function purpose is to remove duplicate hotel which are fetched from the data base
 
@@ -28,22 +28,40 @@ export const getHotel =
       const res = await axios.post(API_GET_HOTEL_SNIPIT_DATA, {
         ...params,
       });
-      console.log(res.data.data.hotel_info);
-      const filteredHotels = uniqByKeepLast(
-        res.data.data.hotel_info,
-        (it) => it.combain_name
-      );
-      dispatch({
-        type: GET_HOTEL_SUCCESS,
-        payload: {
-          data: filteredHotels,
-          message: {
-            message: res.data.message,
-            status: res.data.status,
-            status_message: res.data.status_message,
+      console.log(res);
+      if (res.data.data.hotel_info.length > 0) {
+        const filteredHotels = uniqByKeepLast(
+          res.data.data.hotel_info,
+          (it) => it.combain_name
+        );
+        console.log(res);
+        dispatch({
+          type: GET_HOTEL_SUCCESS,
+          payload: {
+            data: filteredHotels,
+            message: {
+              message: res.data.message,
+              status: res.data.status,
+              status_message: res.data.status_message,
+            },
           },
-        },
-      });
+        });
+        
+      } else {
+        console.log("else dispatch");
+        dispatch({
+          type: GET_HOTEL_SUCCESS,
+          payload: {
+            data: [],
+            message: {
+              message: res.data.message,
+              status: res.data.status,
+              status_message: res.data.status_message,
+            },
+          },
+        });
+      }
+      
     } catch (err) {
       dispatch({ type: GET_HOTEL_FAILURE });
     }
