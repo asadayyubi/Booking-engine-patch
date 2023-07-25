@@ -6,7 +6,7 @@ import AutoSearch from "../AutoSearch/AutoSearch";
 import Button from "../Button/Button";
 import CloseIcon from "@mui/icons-material/Close";
 
-const MobilePatch = ({ handleClose }) => {
+const MobilePatch = ({ handleClose,colorCode }) => {
   const [inputText, setInputText] = useState([
     "Select Adults",
     "Select Rooms",
@@ -24,6 +24,7 @@ const MobilePatch = ({ handleClose }) => {
         className={`mobile-patch-main transition-top ${
           mounted ? "transition-active" : ""
         }`}
+        style={{backgroundColor:colorCode}}
       >
         <div className="close-icon">
           {" "}

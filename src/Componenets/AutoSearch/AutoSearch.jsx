@@ -18,9 +18,9 @@ const AutoSearch = ({ handleUserInput }) => {
   );
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getHotel());
-  }, []);
+useEffect(()=>{
+  console.log(hotels);
+},[hotels])
 
   const handleOptionChange = (event, value) => {
     setSelectedOption(value);

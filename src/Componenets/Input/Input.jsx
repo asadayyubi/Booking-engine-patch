@@ -23,6 +23,7 @@ const Input = ({text}) => {
   return (
     <div className="main-input-container">
       <p>{text}</p>
+      {/* <div className="scrollbar"> */}
       <select
         id="dropdown"className="mobile-select"
         value={selectedValue}
@@ -35,6 +36,7 @@ const Input = ({text}) => {
           </option>
         ))}
       </select>
+      {/* </div> */}
     </div>
   );
 };

@@ -72,4 +72,13 @@
 
 }
 
+#dropdown{
+  height:40px;
+  overflow-y:auto;
+    width:250px;
+}
+.optin{
+  overflow-y:scroll;
+}
+
 }
