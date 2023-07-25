@@ -2,7 +2,8 @@ import "./App.css";
 import "./custom.css";
 import Patch from "./Componenets/Patch/Patch";
 import MobilePatch from "./Componenets/MobileDevice/MobilePatch";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react"
+
 import MobileButton from "./Componenets/MobileDevice/MobileButton";
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
       {/* <Patch />
       <MobilePatch /> */}
       {windowWidth <= 650 ? <MobileButton colorCode={colorCode}/> : <Patch colorCode={colorCode}/>}
+
     </div>
   );
 }
