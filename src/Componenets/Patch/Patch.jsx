@@ -7,7 +7,7 @@ import "./patch.css";
 
 
 
-const Patch = () => {
+const Patch = ({colorCode}) => {
   const [inputText, setInputText] = useState([
     "Select Adults",
     "Select Rooms",
@@ -17,7 +17,7 @@ const Patch = () => {
 
   
   return (
-    <div className="container">
+    <div className="container" style={{backgroundColor:colorCode}}>
       <div className="wrapper">
         <Calender  />
         {inputText.map((text, i) => (
