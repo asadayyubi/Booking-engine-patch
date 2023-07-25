@@ -1,10 +1,9 @@
-
-import './App.css';
+import "./App.css";
 import "./custom.css";
-import Patch from './Componenets/Patch/Patch';
-import MobilePatch from './Componenets/MobileDevice/MobilePatch';
-import { useEffect, useState } from 'react';
-import MobileButton from './Componenets/MobileDevice/MobileButton';
+import Patch from "./Componenets/Patch/Patch";
+import MobilePatch from "./Componenets/MobileDevice/MobilePatch";
+import { useEffect, useState } from "react";
+import MobileButton from "./Componenets/MobileDevice/MobileButton";
 
 function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -15,18 +14,18 @@ function App() {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Clean up the event listener on component unmount
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [windowWidth]);
   return (
     <div className="App">
       {/* <Patch />
       <MobilePatch /> */}
-      {windowWidth <= 650 ? <MobileButton />:<Patch />  }
+      {windowWidth <= 650 ? <MobileButton /> : <Patch />}
     </div>
   );
 }
