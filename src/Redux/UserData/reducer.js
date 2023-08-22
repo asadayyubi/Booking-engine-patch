@@ -10,8 +10,8 @@ import {
 const initialState = {
   from_date: "",
   to_date: "",
-  no_of_adults: 0,
-  room_count: 0,
+  no_of_adults: 1,
+  room_count: 1,
   no_of_children: 0,
   selected_hotel: {}, 
   parmas_for_api: {},

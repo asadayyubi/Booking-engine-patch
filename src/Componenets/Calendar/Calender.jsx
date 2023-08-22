@@ -23,13 +23,12 @@ const Calendar = () => {
   // get the target element to toggle
   const refOne = useRef(null);
 
-  useEffect(() => { 
-    
+  useEffect(() => {
     const formattedStartDate = format(range.startDate, "yyyy-MM-dd");
     const formattedEndDate = format(range.endDate, "yyyy-MM-dd");
     console.log(formattedStartDate, formattedEndDate);
     console.log(range, "from effect");
-    dispatch(updateCalender([formattedStartDate,formattedEndDate]));
+    dispatch(updateCalender([formattedStartDate, formattedEndDate]));
     console.log(store);
   }, [range]);
 
@@ -69,7 +68,7 @@ const Calendar = () => {
   return (
     <div className="calendarWrap">
       <div>
-        <p>Choose Dates</p>
+        <p style={{ fontWeight: "600", marginBottom: "0px" }}>Choose Dates</p>
       </div>
       <div
         className="inputBox"

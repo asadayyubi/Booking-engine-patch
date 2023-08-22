@@ -1,28 +1,29 @@
 
 
-.container {
+.container-patch {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 
     margin: auto;
-    height: 10rem;
-    background-color: var(--background-color);
+    /* height: 10rem;
+    background-color: var(--background-color); */
 }
 .wrapper {
     display: flex;
-    width: 80%;
+    width: 100%;
     /* justify-content: space-evenly; */
     justify-content: space-between;
     align-items: center;
     background-color: white;
+    padding: 5px;
     /* margin: 10px; */
-    padding-left: 10px;
+    /* padding-left: 10px; */
     /* padding-right: 10px; */
     border-radius: 5px;
-    height: 60px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /* height: 60px; */
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
 }
 
 

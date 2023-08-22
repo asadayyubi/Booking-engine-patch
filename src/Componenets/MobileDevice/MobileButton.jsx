@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./mobile.css";
 import MobilePatch from "./MobilePatch";
 
-const MobileButton = ({colorCode}) => {
+const MobileButton = ({colorCode,btnColor,brandId}) => {
   const [toggleComponent, setToggleComponent] = useState(true);
   const handleToggle = (e) => {
     setToggleComponent(false);
@@ -20,7 +20,7 @@ const MobileButton = ({colorCode}) => {
       </div>
     );
   } else {
-    return <MobilePatch handleClose={handleClose} colorCode={colorCode} />;
+    return <MobilePatch handleClose={handleClose} colorCode={colorCode} btnColor={btnColor} brandId={brandId}/>;
   }
 };
 

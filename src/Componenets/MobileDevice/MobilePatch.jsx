@@ -6,7 +6,7 @@ import AutoSearch from "../AutoSearch/AutoSearch";
 import Button from "../Button/Button";
 import CloseIcon from "@mui/icons-material/Close";
 
-const MobilePatch = ({ handleClose,colorCode }) => {
+const MobilePatch = ({ handleClose,colorCode,btnColor,brandId }) => {
   const [inputText, setInputText] = useState([
     "Select Adults",
     "Select Rooms",
@@ -44,11 +44,11 @@ const MobilePatch = ({ handleClose,colorCode }) => {
         </div>
 
         <div className="mobile-autosearch">
-          <AutoSearch />
+          <AutoSearch brandId={brandId}/>
         </div>
 
         <div className="mobile-button">
-          <Button />
+          <Button btnColor={btnColor}/>
         </div>
       </div>
     </>

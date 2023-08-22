@@ -21,7 +21,7 @@ function uniqByKeepLast(data, key) {
 }
 // -----------end of the above function ------------------
 export const getHotel =
-  (params = { brand_id: 33 }) =>
+  (params = { brand_id: 42 }) =>
   async (dispatch) => {
     try {
       dispatch({ type: GET_HOTEL_REQUEST });

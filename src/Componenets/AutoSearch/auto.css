@@ -8,6 +8,15 @@
   margin: 5px;
   padding: 2px;
 }
+.select-hotel-cont-div {
+  width: 100%;
+  margin: auto;
+}
+.select-auto-options {
+  width: 90%;
+  border: 1px solid red;
+  /* margin: auto; */
+}
 
 @media (max-width: 650px) {
 

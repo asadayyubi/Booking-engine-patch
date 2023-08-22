@@ -50,10 +50,8 @@
         /* top: 20%; */
         transition: 1s ease-out;
         position:fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 99999;
+     
+        z-index: 99999999;
       }
       
       .mobile-button-main-comp {
@@ -61,7 +59,7 @@
         position: fixed;
         /* top: 93.3vh; */
         width: 100%;
-        bottom: 0;
+        /* bottom: 0; */
     }
 
 }

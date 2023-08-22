@@ -11,6 +11,8 @@ function App() {
   const [dataFromHtml, setDataFromHtml] = useState({});
   // for testing start
   const [colorCode,setColorCode] = useState("");
+  const [btnColor,setBtnColor] = useState("");
+  const [brandId,setBrandId] = useState("")
   const spanRef = useRef(null);
 
   useEffect(() => {
@@ -19,10 +21,13 @@ function App() {
       const typeId = spanElement.dataset.typeid;
       const brand_id = spanElement.dataset.brandid;
       const colorcode = spanElement.dataset.colorcode;
-
+      const btncolor = spanElement.dataset.btncolor;
+      
       console.log(typeId, brand_id, colorcode, "value raw");
-      setColorCode(colorcode)
-      setDataFromHtml({ typeId, brand_id, colorcode });
+      setColorCode(colorcode);
+      setBtnColor(btncolor);
+      setBrandId(+brand_id)
+      setDataFromHtml({ typeId, brand_id, colorcode ,btncolor});
       console.log(dataFromHtml, "data from html value from state");
     }
   }, []);
@@ -44,7 +49,7 @@ function App() {
     <div className="App">
       {/* <Patch />
       <MobilePatch /> */}
-      {windowWidth <= 650 ? <MobileButton colorCode={colorCode}/> : <Patch colorCode={colorCode}/>}
+      {windowWidth <= 650 ? <MobileButton colorCode={colorCode} btnColor={btnColor} brandId={brandId}/> : <Patch colorCode={colorCode} btnColor={btnColor} brandId={brandId}/>}
 
     </div>
   );

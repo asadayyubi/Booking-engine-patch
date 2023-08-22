@@ -3,7 +3,7 @@ import "./Button.css";
 import { useDispatch, useSelector } from "react-redux";
 import { constructObjForGetHotelById } from "../../Redux/UserData/action";
 
-const Button = () => {
+const Button = ({btnColor}) => {
   const [data, setData] = useState({});
 
   const store = useSelector((store) => store?.reducerUserData || {});
@@ -45,7 +45,7 @@ const Button = () => {
   return (
     <div>
       <button
-        className="hero-btn"
+        className="hero-btn" style={{backgroundColor:btnColor}}
         // style={{ padding: "10px 20px" }}
         onClick={handleButtonClick}
       >
