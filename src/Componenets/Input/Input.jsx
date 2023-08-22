@@ -29,7 +29,7 @@ const Input = ({ text, roomsCount }) => {
     <div className="main-input-container">
       <p style={{ marginBottom: "0px" }}>{text}</p>
       {/* <div className="scrollbar"> */}
-      <select
+      {/* <select
         id="dropdown"
         className="mobile-select"
         value={selectedValue}
@@ -49,7 +49,7 @@ const Input = ({ text, roomsCount }) => {
             {index + 1}
           </option>
         ))}
-      </select>
+      </select> */}
       {/* </div> */}
     </div>
   );
