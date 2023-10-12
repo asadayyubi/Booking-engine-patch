@@ -1,14 +1,16 @@
 import React from "react";
 
+
 const RoomsCountInput = ({ handleRoomCountChange }) => {
   return (
-    <div>
-      <p style={{ fontSize: "16px", fontWeight: "500",margin:"0px" }}>Select Rooms</p>
-      <select
+    <div style={{margin:"5px 0"}}>
+      <p className="select-p-mobile-view" style={{ fontSize: "18px", fontWeight: "500",margin:"5px", }}>Select Rooms</p>
+      <select  className="mobile-select-mob-view"
         onChange={handleRoomCountChange}
         style={{
           border: "1px solid transparent",
-          padding: "0px 25px",
+         
+          borderRadius:"4px",
         }}
       >
         <option value="1">1</option>

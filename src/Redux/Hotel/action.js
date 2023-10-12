@@ -29,10 +29,10 @@ export const getHotel =
         ...params,
       });
       console.log(res);
-      if (res.data.data.hotel_info.length > 0) {
+      if (res?.data?.data?.hotel_info?.length > 0) {
         const filteredHotels = uniqByKeepLast(
-          res.data.data.hotel_info,
-          (it) => it.combain_name
+          res?.data?.data?.hotel_info,
+          (it) => it?.combain_name
         );
         console.log(res);
         dispatch({
@@ -40,9 +40,9 @@ export const getHotel =
           payload: {
             data: filteredHotels,
             message: {
-              message: res.data.message,
-              status: res.data.status,
-              status_message: res.data.status_message,
+              message: res?.data?.message,
+              status: res?.data?.status,
+              status_message: res?.data?.status_message,
             },
           },
         });

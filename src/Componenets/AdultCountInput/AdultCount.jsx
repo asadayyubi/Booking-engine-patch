@@ -13,19 +13,21 @@ const AdultCount = ({ roomsCount,handleInputChange,selectedValue }) => {
   },[roomsCount])
   
   return (
-    <div>
-      <p style={{ fontSize: "16px", fontWeight: "500",margin:"0px" }}>Select Adults</p>
-      <select
+    <div style={{margin:"5px 0"}}>
+      <p className="select-p-mobile-view" style={{ fontSize: "18px", fontWeight: "500",margin:"5px", }}>Select Adults</p>
+      <select className="mobile-select-mob-view"
         value={selectedValue}
         onChange={(e) => handleInputChange(e)}
         style={{
             border: "1px solid transparent",
-            padding: "0px 25px",
+           
+            borderRadius:"4px",
           }}
       >
         {/* <option key={13} value={0}>
           --Select--
         </option> */}
+        <option  value="">0</option>
         {noAdults.map((_, i) => (
           <option key={i + 1} value={i + 1}>{i + 1}</option>
         ))}

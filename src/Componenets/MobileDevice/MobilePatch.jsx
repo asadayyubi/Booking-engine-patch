@@ -5,6 +5,12 @@ import Input from "../Input/Input";
 import AutoSearch from "../AutoSearch/AutoSearch";
 import Button from "../Button/Button";
 import CloseIcon from "@mui/icons-material/Close";
+import MobileDropdown from "../MobileDropdown/MobileDropdown";
+import { useDispatch } from "react-redux";
+import { updateAdults, updateRooms } from "../../Redux/UserData/action";
+import RoomsCountInput from "../RoomsCountInput/RoomsCountInput";
+import AdultCount from "../AdultCountInput/AdultCount";
+import ChildrenCount from "../ChildrenCountInput/ChildrenCount";
 
 const MobilePatch = ({ handleClose,colorCode,btnColor,brandId }) => {
   const [inputText, setInputText] = useState([
@@ -12,7 +18,22 @@ const MobilePatch = ({ handleClose,colorCode,btnColor,brandId }) => {
     "Select Rooms",
     "Select Children",
   ]);
+  const [roomsCount, setRoomsCount] = useState(1);
   const [mounted, setMounted] = useState(false);
+  const dispatch = useDispatch();
+  const [selectedValue, setSelectedValue] = useState(0);
+
+  const handleInputChange = (e) => {
+    // console.log(e.target.value);
+    setSelectedValue(+e.target.value);
+    dispatch(updateAdults(+e.target.value));
+  };
+
+  const handleRoomCountChange = (e) => {
+    console.log(e.target.value, "comming from change rooms");
+    setRoomsCount(+e.target.value);
+    dispatch(updateRooms(+e.target.value));
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -37,14 +58,22 @@ const MobilePatch = ({ handleClose,colorCode,btnColor,brandId }) => {
           <Calendar />
         </div>
 
-        <div className="mobile-input">
+        {/* <div className="mobile-input">
           {inputText.map((text, i) => (
             <Input key={i} text={text} id={i} />
           ))}
-        </div>
+        </div> */}
+        <RoomsCountInput handleRoomCountChange={handleRoomCountChange} />
+        <AdultCount
+          roomsCount={roomsCount}
+          handleInputChange={handleInputChange}
+          selectedValue={selectedValue}
+        />
+        <ChildrenCount roomsCount={roomsCount} selectedValue={selectedValue} />
 
         <div className="mobile-autosearch">
-          <AutoSearch brandId={brandId}/>
+          {/* <AutoSearch brandId={brandId}/> */}
+          <MobileDropdown brandId={brandId}/>
         </div>
 
         <div className="mobile-button">

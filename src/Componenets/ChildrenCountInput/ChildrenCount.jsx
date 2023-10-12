@@ -37,16 +37,17 @@ const ChildrenCount = ({ roomsCount, selectedValue }) => {
     dispatch(updateChildren(0));
   }, [selectedValue]);
   return (
-    <div onClick={() => popUpHandle(arrLength.length)}>
-      <p style={{ fontSize: "16px", fontWeight: "500", margin: "0px" }}>
+    <div style={{margin:"5px 0"}} onClick={() => popUpHandle(arrLength.length)}>
+      <p className="select-p-mobile-view" style={{ fontSize: "18px", fontWeight: "500", margin: "5px", }}>
         Select Childrens
       </p>
-      <select
+      <select className="mobile-select-mob-view"
         value={selectedChildValue}
         onChange={(e) => handleInputChange(e)}
         style={{
           border: "1px solid transparent",
-          padding: "0px 25px",
+          
+          borderRadius:"4px",
         }}
       >
         <option key={0} value={0}>

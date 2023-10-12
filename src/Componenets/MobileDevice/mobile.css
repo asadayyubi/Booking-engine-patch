@@ -1,7 +1,8 @@
 .mobile-patch-main {
   /* width: 400px; */
   height: 100vh;
-  background: var(--background-color);
+  /* background: var(--background-color); */
+  background-color: #474391;
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -18,7 +19,7 @@
 .mobile-button-main-comp {
   width: 100%;
   position: absolute;
-  top: 93.3vh;
+  /* top: 93.3vh; */
   /* border: 1px solid red; */
   background: var(--button-color);
 }
@@ -38,28 +39,38 @@
   transform: translateY(0);
 }
 
+.mobile-select-mob-view{
+ padding: 8px 30px;
+}
 
 @media (max-width: 650px) {
-    .mobile-patch-main {
-        /* width: 400px; */
-        height: 100vh;
-        background: var(--background-color);
-        display: flex;
-        flex-direction: column;
-        /* position: sticky; */
-        /* top: 20%; */
-        transition: 1s ease-out;
-        position:fixed;
-     
-        z-index: 99999999;
-      }
-      
-      .mobile-button-main-comp {
-        background: var(--button-color);
-        position: fixed;
-        /* top: 93.3vh; */
-        width: 100%;
-        /* bottom: 0; */
-    }
+  .mobile-patch-main {
+    height: 100vh;
+    /* background: var(--background-color); */
+    width: 100%;
+    background: #474391;
+    display: flex;
+    flex-direction: column;
+    /* position: sticky; */
+    /* top: 20%; */
+    transition: 1s ease-out;
+    position: fixed;
+    bottom: 0;
+    z-index: 99999999;
+  }
 
+  .mobile-button-main-comp {
+    background: var(--button-color);
+    position: fixed;
+    /* top: 93.3vh; */
+    width: 100%;
+    bottom: 0;
+  }
+
+  .mobile-select-mob-view{
+    padding: 8px 60px;
+  }
+  .select-p-mobile-view{
+    color: #fff;
+  }
 }

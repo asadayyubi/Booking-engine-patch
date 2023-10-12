@@ -24,7 +24,7 @@ const AutoSearch = ({ handleUserInput, brandId }) => {
   useEffect(() => {
     // console.log(hotels, "from hotel effect");
     // console.log(brandId, "from brand id autosearch");
-    dispatch(getHotel({ brand_id: +43 }));
+    dispatch(getHotel({ brand_id: brandId }));
   }, [brandId]);
   // console.log(hotels[0]);
   const handleOptionChange = (event, value) => {
@@ -50,6 +50,7 @@ const AutoSearch = ({ handleUserInput, brandId }) => {
         getOptionLabel={(hotels) => {
           console.log("from get option", hotels?.combain_name);
           return hotels?.combain_name;
+          
         }}
         onChange={handleOptionChange}
         renderInput={(params) => (
