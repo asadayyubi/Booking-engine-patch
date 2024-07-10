@@ -68,7 +68,7 @@ const Calendar = () => {
   return (
     <div className="calendarWrap">
       <div>
-        <p style={{ fontWeight: "600", marginBottom: "0px" }}>Choose Dates</p>
+        <p style={{ fontWeight: "600", marginBottom: "0px" }}>From Date - To Date</p>
       </div>
       <div
         className="inputBox"

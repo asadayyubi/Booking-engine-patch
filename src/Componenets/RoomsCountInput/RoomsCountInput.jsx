@@ -4,7 +4,7 @@ import React from "react";
 const RoomsCountInput = ({ handleRoomCountChange }) => {
   return (
     <div style={{margin:"5px 0"}}>
-      <p className="select-p-mobile-view" style={{ fontSize: "18px", fontWeight: "500",margin:"5px", }}>Select Rooms</p>
+      <p className="select-p-mobile-view" style={{ fontSize: "18px", fontWeight: "500",margin:"5px", }}> Rooms</p>
       <select  className="mobile-select-mob-view"
         onChange={handleRoomCountChange}
         style={{

@@ -39,7 +39,7 @@ const ChildrenCount = ({ roomsCount, selectedValue }) => {
   return (
     <div style={{margin:"5px 0"}} onClick={() => popUpHandle(arrLength.length)}>
       <p className="select-p-mobile-view" style={{ fontSize: "18px", fontWeight: "500", margin: "5px", }}>
-        Select Childrens
+         Childrens
       </p>
       <select className="mobile-select-mob-view"
         value={selectedChildValue}

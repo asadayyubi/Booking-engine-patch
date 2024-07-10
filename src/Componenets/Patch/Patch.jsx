@@ -38,6 +38,7 @@ const Patch = ({ colorCode, btnColor, brandId }) => {
   return (
     <div className="container-patch" style={{ backgroundColor: colorCode }}>
       <div className="wrapper">
+        <p className="patch-mainp-tag">BOOK YOUR <br /> <span>ROOMS</span></p>
         <Calender />
         <RoomsCountInput handleRoomCountChange={handleRoomCountChange} />
         {/* {inputText.map((text, i) => (

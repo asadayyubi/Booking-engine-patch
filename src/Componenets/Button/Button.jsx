@@ -26,7 +26,7 @@ const Button = ({ btnColor }) => {
         no_of_adults,
         room_count,
         no_of_children,
-        id: selected_hotel.hotel_id,
+        id: selected_hotel?.hotel_id,
       })
     );
   }, [selected_hotel, no_of_adults, room_count, no_of_children]);
